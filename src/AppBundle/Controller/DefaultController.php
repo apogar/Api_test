@@ -5,10 +5,9 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
-
+use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class DefaultController extends Controller
 {
     /**
@@ -16,18 +15,29 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        echo "\n \033[0;31m Le choix saisie n'est pas valide \033[0m\n";
-        return $request;
+        // replace this example code with whatever you need
+        return $this->render('default/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
     }
 
     /**
-     * @Route("/name", name="homepage")
+     * @Route("/test", name="test")
+      * @Method({"GET"})
      */
-    public function nameAction(Request $request)
-    { 
-        $name =  array("test1","test2","test3");
-
-        return new JsonResponse(array('name' => $name));
-
+    public function getPlacesAction(Request $request)
+    {
+        return new JsonResponse(['status' => 200]);
     }
+
+    /**
+     * @Route("/test", name="testpost")
+     * @Method({"POST"})
+     *
+     */
+    public function postPlacesAction(Request $request)
+    {
+        return new JsonResponse(['status' => 201]);
+    }
+
 }
