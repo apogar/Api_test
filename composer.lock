@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "faa3e04f343657ec00629b8027c5ecf9",
+    "content-hash": "839187b924ac5d13d21251cfdbb80a6e",
     "packages": [
         {
             "name": "composer/ca-bundle",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "9dd73a03951357922d8aee6cc084500de93e2343"
+                "reference": "36344aeffdc37711335563e6108cda86566432a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/9dd73a03951357922d8aee6cc084500de93e2343",
-                "reference": "9dd73a03951357922d8aee6cc084500de93e2343",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/36344aeffdc37711335563e6108cda86566432a6",
+                "reference": "36344aeffdc37711335563e6108cda86566432a6",
                 "shasum": ""
             },
             "require": {
@@ -63,39 +63,39 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2017-09-11T07:24:36+00:00"
+            "time": "2017-11-13T15:51:25+00:00"
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.7",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535"
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
-                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -131,7 +131,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-08-31T12:32:49+00:00"
+            "time": "2017-02-24T16:22:25+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -205,28 +205,29 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "doctrine/coding-standard": "~0.1@dev",
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -267,20 +268,20 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14T22:21:58+00:00"
+            "time": "2017-01-03T10:49:41+00:00"
         },
         {
             "name": "doctrine/common",
-            "version": "v2.6.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "7bce00698899aa2c06fe7365c76e4d78ddb15fa3"
+                "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/7bce00698899aa2c06fe7365c76e4d78ddb15fa3",
-                "reference": "7bce00698899aa2c06fe7365c76e4d78ddb15fa3",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/4acb8f89626baafede6ee5475bc5844096eba8a9",
+                "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9",
                 "shasum": ""
             },
             "require": {
@@ -289,10 +290,10 @@
                 "doctrine/collections": "1.*",
                 "doctrine/inflector": "1.*",
                 "doctrine/lexer": "1.*",
-                "php": "~5.5|~7.0"
+                "php": "~5.6|~7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8|~5.0"
+                "phpunit/phpunit": "^5.4.6"
             },
             "type": "library",
             "extra": {
@@ -340,7 +341,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2016-11-30T16:50:46+00:00"
+            "time": "2017-07-22T08:35:12+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -886,6 +887,107 @@
                 "rest"
             ],
             "time": "2016-10-17T18:31:11+00:00"
+        },
+        {
+            "name": "friendsofsymfony/rest-bundle",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
+                "reference": "d62a6c0f4bc699f899865d7e7bc7a4186aef9a86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/d62a6c0f4bc699f899865d7e7bc7a4186aef9a86",
+                "reference": "d62a6c0f4bc699f899865d7e7bc7a4186aef9a86",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^1.0",
+                "php": "^5.5.9|~7.0",
+                "psr/log": "^1.0",
+                "symfony/config": "^2.7|^3.0",
+                "symfony/debug": "^2.7|^3.0",
+                "symfony/dependency-injection": "^2.7|^3.0",
+                "symfony/event-dispatcher": "^2.7|^3.0",
+                "symfony/finder": "^2.7|^3.0",
+                "symfony/framework-bundle": "^2.7|^3.0",
+                "symfony/http-foundation": "^2.7|^3.0",
+                "symfony/http-kernel": "^2.7|^3.0",
+                "symfony/routing": "^2.7|^3.0",
+                "symfony/security-core": "^2.7|^3.0",
+                "symfony/templating": "^2.7|^3.0",
+                "willdurand/jsonp-callback-validator": "^1.0",
+                "willdurand/negotiation": "^2.0"
+            },
+            "conflict": {
+                "jms/serializer": "1.3.0",
+                "sensio/framework-extra-bundle": "<3.0.13"
+            },
+            "require-dev": {
+                "jms/serializer-bundle": "^1.0",
+                "phpoption/phpoption": "^1.1",
+                "psr/http-message": "^1.0",
+                "sensio/framework-extra-bundle": "^3.0.13",
+                "symfony/asset": "^2.7|^3.0",
+                "symfony/browser-kit": "^2.7|^3.0",
+                "symfony/css-selector": "^2.7|^3.0",
+                "symfony/dependency-injection": "^2.7|^3.0",
+                "symfony/expression-language": "~2.7|^3.0",
+                "symfony/form": "^2.7|^3.0",
+                "symfony/phpunit-bridge": "^3.2",
+                "symfony/security-bundle": "^2.7|^3.0",
+                "symfony/serializer": "^2.7.11|^3.0.4",
+                "symfony/twig-bundle": "^2.7|^3.0",
+                "symfony/validator": "^2.7|^3.0",
+                "symfony/web-profiler-bundle": "^2.7|^3.0",
+                "symfony/yaml": "^2.7|^3.0"
+            },
+            "suggest": {
+                "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires ^1.0",
+                "sensio/framework-extra-bundle": "Add support for route annotations and the view response listener, requires ^3.0",
+                "symfony/expression-language": "Add support for using the expression language in the routing, requires ^2.7|^3.0",
+                "symfony/serializer": "Add support for basic serialization capabilities and xml decoding, requires ^2.7|^3.0",
+                "symfony/validator": "Add support for validation capabilities in the ParamFetcher, requires ^2.7|^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\RestBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSRestBundle/contributors"
+                },
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com"
+                }
+            ],
+            "description": "This Bundle provides various tools to rapidly develop RESTful API's with Symfony",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "rest"
+            ],
+            "time": "2017-04-06T12:55:03+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2095,16 +2197,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.3.11",
+            "version": "v3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "97e753fa58c6ab8751e5f77995d1ed7737a99f1b"
+                "reference": "1452970fc29131776505f684bd81d7a33cbaada4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/97e753fa58c6ab8751e5f77995d1ed7737a99f1b",
-                "reference": "97e753fa58c6ab8751e5f77995d1ed7737a99f1b",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/1452970fc29131776505f684bd81d7a33cbaada4",
+                "reference": "1452970fc29131776505f684bd81d7a33cbaada4",
                 "shasum": ""
             },
             "require": {
@@ -2245,7 +2347,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-11-10T20:08:30+00:00"
+            "time": "2017-11-13T19:37:31+00:00"
         },
         {
             "name": "twig/twig",
@@ -2311,6 +2413,98 @@
                 "templating"
             ],
             "time": "2017-09-27T18:06:46+00:00"
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/JsonpCallbackValidator.git",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/JsonpCallbackValidator/zipball/1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                }
+            ],
+            "description": "JSONP callback validator.",
+            "time": "2014-01-20T22:35:06+00:00"
+        },
+        {
+            "name": "willdurand/negotiation",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/Negotiation.git",
+                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/03436ededa67c6e83b9b12defac15384cb399dc9",
+                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Negotiation\\": "src/Negotiation"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                }
+            ],
+            "description": "Content Negotiation tools for PHP provided as a standalone library.",
+            "homepage": "http://williamdurand.fr/Negotiation/",
+            "keywords": [
+                "accept",
+                "content",
+                "format",
+                "header",
+                "negotiation"
+            ],
+            "time": "2017-05-14T17:21:12+00:00"
         }
     ],
     "packages-dev": [
@@ -2370,7 +2564,7 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.3.11",
+            "version": "v3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
@@ -2439,8 +2633,5 @@
     "platform": {
         "php": ">=5.5.9"
     },
-    "platform-dev": [],
-    "platform-overrides": {
-        "php": "5.5.9"
-    }
+    "platform-dev": []
 }
