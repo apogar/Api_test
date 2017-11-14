@@ -90,5 +90,4 @@ class DefaultController extends Controller
     {
         return new JsonResponse(['status' => 201]);
     }
-
 }
