@@ -66,16 +66,18 @@ class DefaultController extends Controller
      */
     public function getCalendarAction(Request $request)
     {
-        $jour = date("j");
-        $mois = date("n");
+        $day = date("j");
+        $month = date("n");
         $year = date("Y");
         $sem = date("N");
+        $nb = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
         $calendar = array(
-            'day'   => $jour,
-            'month' => $mois,
+            'day'   => $day,
+            'month' => $month,
             'year'  => $year,
-            'sem'   => $sem
+            'sem'   => $sem,
+            'nb'    => $nb
             );
 
         return new JsonResponse($calendar);
