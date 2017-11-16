@@ -71,13 +71,28 @@ class DefaultController extends Controller
         $year = date("Y");
         $sem = date("N");
         $nb = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        $arr = array_fill(1, $nb, 0);
+
+        for($i=1;$i<=$nb;$i++){
+            $tmp=jddayofweek(cal_to_jd(CAL_GREGORIAN,$month,$i,$year),0);
+            /*if($tmp == 0){
+                $tmp = 7;
+            }*/
+            $arr[$i] = [
+            'i' => $i,
+            'j' => $tmp
+            ];
+        }
+
+
 
         $calendar = array(
             'day'   => $day,
             'month' => $month,
             'year'  => $year,
             'sem'   => $sem,
-            'nb'    => $nb
+            'nb'    => $nb,
+            'arr'   => $arr
             );
 
         return new JsonResponse($calendar);
