@@ -75,9 +75,9 @@ class DefaultController extends Controller
 
         for($i=1;$i<=$nb;$i++){
             $tmp=jddayofweek(cal_to_jd(CAL_GREGORIAN,$month,$i,$year),0);
-            /*if($tmp == 0){
+            if($tmp == 0){
                 $tmp = 7;
-            }*/
+            }
             $arr[$i] = [
             'i' => $i,
             'j' => $tmp
@@ -97,6 +97,115 @@ class DefaultController extends Controller
 
         return new JsonResponse($calendar);
     }
+
+    /**
+     * @Route("/dateplus/{date}", name="dateplus")
+     * @Method({"GET"})
+     */
+    public function getDateplusAction(Request $request,$date)
+    {
+        list($month,$year) = split('-',$date);
+
+        $month  = intval($month);
+        $year   = intval($year);
+        $day = -1;
+
+        if($month == 12){
+            $month = 1;
+            $year += 1;
+        }else{
+            $month += 1;
+        }
+
+        if($month == date('n')){
+            $day = date('j');
+        }
+
+        $nb = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        $arr = array_fill(1, $nb, 0);
+
+        for($i=1;$i<=$nb;$i++){
+            $tmp=jddayofweek(cal_to_jd(CAL_GREGORIAN,$month,$i,$year),0);
+            if($tmp == 0){
+                $tmp = 7;
+            }
+            $arr[$i] = [
+            'i' => $i,
+            'j' => $tmp
+            ];
+        }
+
+
+
+        return new JsonResponse([
+            'month' => $month,
+            'year'  => $year,
+            'day'   => $day,
+            'nb'    => $nb,
+            'arr'   => $arr
+            ]);
+    } 
+
+    /**
+     * @Route("/datemoins/{date}", name="datemoins")
+     * @Method({"GET"})
+     */
+    public function getDatemoinsAction(Request $request,$date)
+    {
+        list($month,$year) = split('-',$date);
+
+        $month  = intval($month);
+        $year   = intval($year);
+        $day    = -1;
+
+        if($month == 1){
+            $month = 12;
+            $year -= 1;
+        }else{
+            $month -= 1;
+        }
+
+        if($month == date('n')){
+            $day = date('j');
+        }
+
+        $nb = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        $arr = array_fill(1, $nb, 0);
+
+        for($i=1;$i<=$nb;$i++){
+            $tmp=jddayofweek(cal_to_jd(CAL_GREGORIAN,$month,$i,$year),0);
+            if($tmp == 0){
+                $tmp = 7;
+            }
+            $arr[$i] = [
+            'i' => $i,
+            'j' => $tmp
+            ];
+        }
+
+
+
+        return new JsonResponse([
+            'month' => $month,
+            'year'  => $year,
+            'day'  => $day,
+            'nb'    => $nb,
+            'arr'   => $arr
+            ]);
+    } 
+
+
+    /**
+     * @Route("/rdv/{day}", name="rdv")
+     * @Method({"GET"})
+     */
+    public function getRdvAction(Request $request,$day)
+    {
+        $rdv = 0;
+        $rdv = $day*2;
+        return new JsonResponse($rdv);
+    }
+
 
     /**
      * @Route("/test", name="testpost")
