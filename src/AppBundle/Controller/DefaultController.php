@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
+use AppBundle\Entity\Rdv;
+
 class DefaultController extends Controller
 {
     /**
@@ -196,15 +199,50 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/rdv/{day}", name="rdv")
+     * @Route("/rdv/{date}", name="rdv")
      * @Method({"GET"})
      */
-    public function getRdvAction(Request $request,$day)
+    public function getRdvAction(Request $request,$date)
     {
-        $rdv = 0;
-        $rdv = $day*2;
-        return new JsonResponse($rdv);
+        $em = $this->getDoctrine()->getManager();
+
+        $da = new \Datetime($date);
+
+        $rdv = $em->getRepository('AppBundle:Rdv')->findByDate($da);
+
+        if(sizeof($rdv) > 0){
+            for($i=0;$i<sizeof($rdv);$i++){
+            $data[$i] = $rdv[$i]->getName();
+            }
+        }else{
+            $data[0] = '';
+        }
+
+        return new JsonResponse($data);
     }
+
+    /**
+     * @Route("/rdvAll/{year}/{month}", name="rdvAll")
+     * @Method({"GET"})
+     */
+    public function getRdvallAction(Request $request,$year,$month)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $rdv = $em->getRepository('AppBundle:Rdv')->getAll($year,$month);
+
+       if(sizeof($rdv) > 0){
+            for($i=0;$i<sizeof($rdv);$i++){
+            $data[$i] = $rdv[$i]->getDate();
+            }
+        }else{
+            $data[0] = '';
+        }
+
+        return new JsonResponse($data);
+    }
+
+
 
 
     /**
@@ -215,5 +253,36 @@ class DefaultController extends Controller
     public function postPlacesAction(Request $request)
     {
         return new JsonResponse(['status' => 201]);
+    }
+
+        /**
+     * @Route("/rdv", name="rdvpost")
+     * @Method({"POST"})
+     *
+     */
+    public function postRdvAction(Request $request)
+    {
+        $data = [
+        'first' => $request->request->get('first'),
+        'last' => $request->request->get('last'),
+        'date' => $request->request->get('date')
+        ];
+
+        $em = $this->getDoctrine()->getManager();
+
+
+        $rdv = new Rdv();
+        $rdv->setDate(new \Datetime($data['date']));
+        $rdv->setName($data['first'].' '.$data['last']);
+
+        $em->persist($rdv);
+        $em->flush();
+
+
+        return new JsonResponse(['status' => 201,
+            'tmp' => 'test OK',
+            'data' => $data['last'],
+            'rdv' => $rdv->getDate(),
+            ]);
     }
 }
