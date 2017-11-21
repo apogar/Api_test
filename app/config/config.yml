@@ -65,6 +65,21 @@ nelmio_cors:
             max_age: 3600
             hosts: ['^api\.']
 
+fos_rest:
+    routing_loader:
+        default_format: json
+    view:
+        view_response_listener: true
+
+# FOSUserBundle
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "xxxx"
+        sender_name: "xxx"
+
 # Doctrine Configuration
 doctrine:
     dbal:

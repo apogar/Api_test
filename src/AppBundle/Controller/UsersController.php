@@ -84,6 +84,9 @@ class UsersController extends FOSRestController implements ClassResourceInterfac
         );
         return $response;
     }
+
+
+    
     private function getErrorMessages(\Symfony\Component\Form\Form $form) {
         $errors = array();
         foreach ($form->getErrors() as $key => $error) {
